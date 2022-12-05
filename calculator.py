@@ -23,11 +23,11 @@ for i in range(15,34):
                 continue
             if (solar_gear + internal_gear)%number!=0:
                 continue
-            if (planetary_gear + 2) >= (solar_gear + planetary_gear)* math.sin(180/number):
+            if (planetary_gear + 2) >= (solar_gear + planetary_gear)* math.sin(math.pi/number):
                 continue
             gear_set.append([j,i,k])
 
-#許容範囲以内ならリストに加える
+#計算して型ごとによさそうなのを表示していく
 print("以下が計算結果です。")
 print("プラネタリ型")
 for i in range(len(gear_set)):
@@ -45,3 +45,4 @@ for i in range(len(gear_set)):
     if ratio-tolerance<=ratio1<=ratio+tolerance:
         print(str(gear_set[i])+":"+str(-ratio1)+"倍")
 print("[太陽歯車、遊星歯車、内歯車]:速度伝達比で表示しています。")
+print("条件を満たす組み合わせがない場合、何も出力されません。")
